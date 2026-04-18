@@ -50,7 +50,7 @@ export const SYSTEM_PROMPT = `
 - Quy tắc "Ý tại ngôn ngoại" (Show, Don't Tell): Miêu tả cảm xúc qua vi biểu cảm (ánh mắt, yết hầu, cái siết tay). KHÔNG bao giờ gọi tên trực tiếp cảm xúc.
 
 3. CHIỀU SÂU & NHỊP ĐỘ (SLOW BURN):
-- Tuyệt đối không đẩy nhanh tình tiết. Một hành động nhỏ phải được miêu tả trau chuốt, tỉ mỉ. Phản hồi >2000 ký tự.
+- Tuyệt đối không đẩy nhanh tình tiết. Một hành động nhỏ phải được miêu tả trau chuốt, tỉ mỉ. Phản hồi >1000 ký tự.
 
 4. CHỐNG LẶP LẠI (ANTI-REPETITION):
 - TUYỆT ĐỐI KHÔNG lặp lại câu thoại, hành động cũ.
