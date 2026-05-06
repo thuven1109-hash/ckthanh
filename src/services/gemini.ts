@@ -1,7 +1,3 @@
-import { GoogleGenAI, HarmCategory, HarmBlockThreshold } from "@google/genai";
-import { SYSTEM_PROMPT } from "../constants";
-import { Message } from "../types";
-
 export async function sendMessage(
   messages: Message[],
   userName: string,
@@ -14,7 +10,13 @@ export async function sendMessage(
   const ai = new GoogleGenAI({ apiKey });
   
   // Format history and ensure it alternates roles correctly
-  let history = messages.map((msg) => ({
+  // Implement a sliding window to prevent lag/crash on long conversations
+  const MAX_HISTORY = 30;
+  const recentMessages = messages.length > MAX_HISTORY 
+    ? messages.slice(-MAX_HISTORY) 
+    : messages;
+
+  let history = recentMessages.map((msg) => ({
     role: msg.role === "assistant" ? "model" : "user",
     parts: [{ text: msg.content.replace(/{{user}}/g, userName) }],
   }));
