@@ -74,6 +74,7 @@ export async function sendMessage(
         temperature: 0.9,
         topP: 0.95,
         topK: 40,
+        stopSequences: ["{{user}}:", `${userName}:`],
         safetySettings: [
           { category: HarmCategory.HARM_CATEGORY_HARASSMENT, threshold: HarmBlockThreshold.BLOCK_NONE },
           { category: HarmCategory.HARM_CATEGORY_HATE_SPEECH, threshold: HarmBlockThreshold.BLOCK_NONE },
