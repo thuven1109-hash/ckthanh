@@ -1,3 +1,7 @@
+import { GoogleGenAI, HarmCategory, HarmBlockThreshold } from "@google/genai";
+import { SYSTEM_PROMPT } from "../constants";
+import { Message } from "../types";
+
 export async function sendMessage(
   messages: Message[],
   userName: string,
@@ -28,6 +32,7 @@ export async function sendMessage(
       ...history
     ];
   }
+
 
   const mandatoryRules = `
 [THÔNG BÁO VỀ NỘI DUNG NGƯỜI LỚN (18+)]
